@@ -5,7 +5,8 @@ module.exports.root = (req, res, next) => {
 module.exports.head = (req, res, next) => {
     if (!req.body.name) return res.json(
         {
-            message: 'User must have a name'
+            message: 'This is head.',
+            data: 'please submit your name.'
         }
     )
     // if (!req.user) return res.json({ message: 'You must send user data' })
@@ -26,12 +27,6 @@ module.exports.login = (req, res, next) => {
                 message: "Password also required"
             }
         )
-    } else {
-        return res.json(
-            {
-                message: 'You didn\'t submit your email and password'
-            }
-        )
     }
 
     console.log(req.headers)
@@ -39,5 +34,10 @@ module.exports.login = (req, res, next) => {
 }
 
 module.exports.product = (req, res, next) => {
-    return res.json({ message: 'product controller'} )
+    return res.json(
+        {
+            message: 'product controller',
+            "data": "got you name"
+        }
+    )
 }

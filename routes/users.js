@@ -11,7 +11,11 @@ router.get('/contact', function(req, res, next) {
 });
 
 router.get('/dashboard', function(req, res, next) {
-  res.send('Contact page');
+  res.send('Dashboard by get request');
+});
+
+router.post('/dashboard', function(req, res, next) {
+  res.send('Dashboard by post request');
 });
 
 module.exports = router;
